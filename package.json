@@ -1,0 +1,32 @@
+{
+  "name": "todo-template",
+  "version": "1.0.0",
+  "description": "基于webpack+vue2.0搭建自动化构建前端组件系统模版",
+  "main": "main.js",
+  "author": "zener(1054609489@qq.com)",
+  "license": "ISC",
+  "scripts": {
+    "dev": "webpack-dev-server --port 4003 --inline --hot",
+    "build": "webpack -p"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-runtime": "^6.9.2",
+    "css-loader": "^0.23.1",
+    "json-loader": "^0.5.4",
+    "vue-hot-reload-api": "^2.0.6",
+    "vue-html-loader": "^1.2.2",
+    "vue-loader": "^8.5.2",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "vue": "^2.0.3",
+    "vue-router": "^2.0.1"
+  }
+}
