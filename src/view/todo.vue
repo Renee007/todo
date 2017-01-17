@@ -89,7 +89,7 @@ export default {
                     url: api.fetchTaskList,
                     type: "post",
                     data: "status=todo",
-                    success: function () {
+                    success: function (res) {
                        _self.todoList = res.data;
                     }
                 });
@@ -100,7 +100,7 @@ export default {
              $.ajax({
                     url: api.deleteTaskList,
                     type: "post",
-                    data: deleteListItem,
+                    data: _self.deleteListItem,
                     success: function () {
                         _self.render();
                       
@@ -118,7 +118,7 @@ export default {
              $.ajax({
                     url: api.updateTaskList,
                     type: "post",
-                    data: updateListItem,
+                    data: _self.updateListItem,
                     success: function () {
                         _self.render();
                       
@@ -127,7 +127,7 @@ export default {
         },
         completeOne:function(item){
             if($("#checkbox").val){
-              deleteListItem.push(item.id);
+              this.deleteListItem.push(item.id);
             }
             else{
                for(var i=0;i<deleteListItem.length;i++){
@@ -143,7 +143,7 @@ export default {
              $.ajax({
                     url: api.completeTaskList,
                     type: "post",
-                    data: completeListItem,
+                    data: _self.completeListItem,
                     success: function () {
                         _self.render();
                       

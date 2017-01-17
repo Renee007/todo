@@ -58,6 +58,35 @@
                </div>
            </div>
         </section>
+         <!-- update -->
+         <section class="content" id="update_block">
+           <div class="row">
+               <div class="col-md-12">
+                 <!-- TO DO List -->
+                  <div class="box box-primary">
+                      <div class="box-header">
+                        <i class="ion ion-clipboard"></i>
+                           <h3 class="box-title">update</h3>
+                      </div>
+                            <!-- /.box-header -->
+                      <div class="box-body">
+                          <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="updateListItem.task_name"></textarea><br/>
+                          <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="updateListItem.time"/>
+                          <select class="form-control input-sm" style="width:88px;display:inline-block" >
+                          <option>mins</option>
+                          <option>hours</option>
+                          <option>days</option>
+                          <option>weeks</option>
+                          </select>
+                          <br/><br/>
+                          <button class="btn btn-primary btn-sm" @click="updateSubmit">确定</button>
+                      </div>
+                  </div>
+                    <!-- /.box -->
+                    
+               </div>
+           </div>
+        </section>
     </div>
 </template>
 
@@ -94,29 +123,27 @@ export default {
              $.ajax({
                     url: api.deleteTaskList,
                     type: "post",
-                    data: deleteListItem,
+                    data: _self.deleteListItem,
                     success: function () {
                          _self.render();
-                      
                     }
                 });
         },
          update:function(item){
+             updateListItem.id = item.id;
+             $("#update_block").fadeIn(200);
+        },
+         updateSubmit:function(){
              const _self=this;
-             _self.updateListItem.id = item.id;
-             _self.updateListItem.task_name = item.task_name;
-             _self.updateListItem.time = item.time;
-             _self.updateListItem.time_unit = item.time_unit;
-
-
              $.ajax({
                     url: api.updateTaskList,
                     type: "post",
-                    data: updateListItem,
+                    data: _self.updateListItem,
                     success: function () {
                           _self.render();
                     }
                 });
+             $("#update_block").fadeout(200);
         },
     },
      data () {
@@ -136,3 +163,8 @@ export default {
     }
 }
 </script>
+<style>
+#update_block{
+    display: none;
+}
+</style>
