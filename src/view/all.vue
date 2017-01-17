@@ -95,8 +95,8 @@ export default {
                     url: api.deleteTaskList,
                     type: "post",
                     data: deleteListItem,
-                    success: function (res) {
-                         _self.allList = res.data;
+                    success: function () {
+                         _self.render();
                       
                     }
                 });
@@ -113,9 +113,8 @@ export default {
                     url: api.updateTaskList,
                     type: "post",
                     data: updateListItem,
-                    success: function (res) {
-                         _self.allList = res.data;
-                      
+                    success: function () {
+                          _self.render();
                     }
                 });
         },

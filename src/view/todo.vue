@@ -35,7 +35,7 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                         </span>
                                         <!-- checkbox -->
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" value="" id="checkbox" @click="completeOne(item)"/>
                                         <!-- todo text -->
                                         <span class="text" v-text="item.task_name"></span>
                                         <!-- Emphasis label -->
@@ -88,11 +88,9 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    //dataType:"json",
                     data: "status=todo",
-                    //ContentType:"application/json;charset=utf-8",
-                    success: function (res) {
-                        _self.todoList = res.data;
+                    success: function () {
+                       _self.todoList = res.data;
                     }
                 });
         },
@@ -103,8 +101,8 @@ export default {
                     url: api.deleteTaskList,
                     type: "post",
                     data: deleteListItem,
-                    success: function (res) {
-                         _self.todoList = res.data;
+                    success: function () {
+                        _self.render();
                       
                     }
                 });
@@ -121,21 +119,33 @@ export default {
                     url: api.updateTaskList,
                     type: "post",
                     data: updateListItem,
-                    success: function (res) {
-                         _self.todoList = res.data;
+                    success: function () {
+                        _self.render();
                       
                     }
                 });
         },
-        complete:function(item){
+        completeOne:function(item){
+            if($("#checkbox").val){
+              deleteListItem.push(item.id);
+            }
+            else{
+               for(var i=0;i<deleteListItem.length;i++){
+                  if(deleteListItem[i].id==item.id){
+                      deleteListItem.splice(i,1);
+                      break;
+                  }
+              }       
+           }
+        },
+        complete:function(){
              const _self=this;
-             _self.deleteListItem.id = item.id;
              $.ajax({
                     url: api.completeTaskList,
                     type: "post",
                     data: completeListItem,
-                    success: function (res) {
-                         _self.todoList = res.data;
+                    success: function () {
+                        _self.render();
                       
                     }
                 });
