@@ -26,7 +26,7 @@
                           <option>weeks</option>
                           </select>
                           <br/><br/>
-                          <button class="btn btn-primary btn-sm" @click="add">确定</button>
+                          <button class="btn btn-primary btn-sm" @click="addItem">确定</button>
                       </div>
                   </div>
                     <!-- /.box -->
@@ -51,16 +51,18 @@ export default {
         
     },
     methods: {
-        // add:function(){
-        //      const _self=this;
-        //      $.ajax({
-        //             url: api.fetchTaskList,
-        //             type: "post",
-        //             data: _self.addListItem,
-        //             success: function (res) {
-        //                 alert("添加成功！")；
-        //             }
-        //         });
+        addItem:function(){
+             const _self=this;
+             $.ajax({
+                    url: api.addTaskList,
+                    type: "post",
+                    data: _self.addListItem,
+                    success: function () {
+                        alert("添加成功！");
+                     }
+                });
+           },
+
     },
     data(){
       return{

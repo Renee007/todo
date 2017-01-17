@@ -39,8 +39,8 @@
                                         <small class="label label-danger"><i class="fa fa-clock-o" v-text="item.time+item.time_unit"></i></small>
                                         <!-- General tools such as edit or delete-->
                                         <div class="tools">
-                                            <i class="fa fa-edit"></i>
-                                            <i class="fa fa-trash-o"></i>
+                                            <i class="fa fa-edit" @click="update(item)"></i>
+                                            <i class="fa fa-trash-o" @click="del(item)"></i>
                                         </div>
                                      </li>
 
@@ -65,7 +65,7 @@
 import initStyle from '../common/initStyle'
 import api from '../common/api'
 export default {
-      mounted () {
+    mounted () {
         this.render();
         this.$nextTick(() => {
             initStyle(); 
@@ -81,19 +81,58 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    //dataType:"json",
                     data: "status=done",
-                    //ContentType:"application/json;charset=utf-8",
                     success: function (res) {
                         _self.doneList = res.data;
                     }
                 });
-        }
+        },
+        del:function(item){
+             const _self=this;
+             _self.deleteListItem.id = item.id;
+             $.ajax({
+                    url: api.deleteTaskList,
+                    type: "post",
+                    data: deleteListItem,
+                    success: function (res) {
+                         _self.doneList = res.data;
+                      
+                    }
+                });
+        },
+         update:function(item){
+             const _self=this;
+             _self.updateListItem.id = item.id;
+             _self.updateListItem.task_name = item.task_name;
+             _self.updateListItem.time = item.time;
+             _self.updateListItem.time_unit = item.time_unit;
+
+
+             $.ajax({
+                    url: api.updateTaskList,
+                    type: "post",
+                    data: updateListItem,
+                    success: function (res) {
+                         _self.doneList = res.data;
+                      
+                    }
+                });
+        },
     },
-    data(){
-      return{
-            doneList:[]
-      }
+     data () {
+        return {
+            doneList:[],
+            deleteListItem: {
+                id: '',
+            },
+
+            updateListItem: {
+                id: '',
+                task_name: '',
+                time: '',
+                time_unit: '',
+            }
+        }
     }
 }
 </script>

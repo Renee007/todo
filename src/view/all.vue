@@ -39,8 +39,8 @@
                                         <small class="label label-danger"><i class="fa fa-clock-o" v-text="item.time+item.time_unit"></i></small>
                                         <!-- General tools such as edit or delete-->
                                         <div class="tools">
-                                            <i class="fa fa-edit"></i>
-                                            <i class="fa fa-trash-o"></i>
+                                            <i class="fa fa-edit" @click="update(item)"></i>
+                                            <i class="fa fa-trash-o" @click="del(item)"></i>
                                         </div>
                                      </li>
 
@@ -82,18 +82,57 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    //dataType:"json",
                     data: "",
-                    //ContentType:"application/json;charset=utf-8",
                     success: function (res) {
                         _self.allList = res.data;
                     }
                 });
-        }
+        },
+        del:function(item){
+             const _self=this;
+             _self.deleteListItem.id = item.id;
+             $.ajax({
+                    url: api.deleteTaskList,
+                    type: "post",
+                    data: deleteListItem,
+                    success: function (res) {
+                         _self.allList = res.data;
+                      
+                    }
+                });
+        },
+         update:function(item){
+             const _self=this;
+             _self.updateListItem.id = item.id;
+             _self.updateListItem.task_name = item.task_name;
+             _self.updateListItem.time = item.time;
+             _self.updateListItem.time_unit = item.time_unit;
+
+
+             $.ajax({
+                    url: api.updateTaskList,
+                    type: "post",
+                    data: updateListItem,
+                    success: function (res) {
+                         _self.allList = res.data;
+                      
+                    }
+                });
+        },
     },
      data () {
         return {
-            allList:[]
+            allList:[],
+            deleteListItem: {
+                id: '',
+            },
+
+            updateListItem: {
+                id: '',
+                task_name: '',
+                time: '',
+                time_unit: '',
+            }
         }
     }
 }

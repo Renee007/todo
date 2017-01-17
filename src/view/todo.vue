@@ -42,8 +42,8 @@
                                         <small class="label label-danger"><i class="fa fa-clock-o" v-text="item.time+item.time_unit"></i></small>
                                         <!-- General tools such as edit or delete-->
                                         <div class="tools">
-                                            <i class="fa fa-edit"></i>
-                                            <i class="fa fa-trash-o"></i>
+                                            <i class="fa fa-edit" @click="update(item)"></i>
+                                            <i class="fa fa-trash-o" @click="del(item)"></i>
                                         </div>
                                      </li>
 
@@ -52,7 +52,7 @@
                             </div>
                         <!-- /.box-body -->
                          <div  class="box-footer clearfix no-border">
-                        <button type="button" class="btn btn-default pull-right"> 确定</button>
+                        <button type="button" class="btn btn-default pull-right" @click="complete"> 确定</button>
                         </div>
 
                         <router-link :to="{name: 'new'}">
@@ -95,14 +95,72 @@ export default {
                         _self.todoList = res.data;
                     }
                 });
-        }
+        },
+        del:function(item){
+             const _self=this;
+             _self.deleteListItem.id = item.id;
+             $.ajax({
+                    url: api.deleteTaskList,
+                    type: "post",
+                    data: deleteListItem,
+                    success: function (res) {
+                         _self.todoList = res.data;
+                      
+                    }
+                });
+        },
+         update:function(item){
+             const _self=this;
+             _self.updateListItem.id = item.id;
+             _self.updateListItem.task_name = item.task_name;
+             _self.updateListItem.time = item.time;
+             _self.updateListItem.time_unit = item.time_unit;
+
+
+             $.ajax({
+                    url: api.updateTaskList,
+                    type: "post",
+                    data: updateListItem,
+                    success: function (res) {
+                         _self.todoList = res.data;
+                      
+                    }
+                });
+        },
+        complete:function(item){
+             const _self=this;
+             _self.deleteListItem.id = item.id;
+             $.ajax({
+                    url: api.completeTaskList,
+                    type: "post",
+                    data: completeListItem,
+                    success: function (res) {
+                         _self.todoList = res.data;
+                      
+                    }
+                });
+        },
     },
-    data(){
-      return{
-            todoList:[]
-      }
+     data () {
+        return {
+            todoList:[],
+            deleteListItem: {
+                id: '',
+            },
+
+            updateListItem: {
+                id: '',
+                task_name: '',
+                time: '',
+                time_unit: '',
+            },
+            completeListItem: {
+                id: '',
+            },
+        }
     }
 }
+   
 </script>
 
 
