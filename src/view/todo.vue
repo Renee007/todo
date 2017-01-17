@@ -126,13 +126,13 @@ export default {
                 });
         },
         completeOne:function(item){
-            if($("#checkbox").val){
-              this.deleteListItem.push(item.id);
+            if($("#checkbox").is(':checked')){
+              this.deleteListItem.push({id:'item.id'});
             }
             else{
-               for(var i=0;i<deleteListItem.length;i++){
-                  if(deleteListItem[i].id==item.id){
-                      deleteListItem.splice(i,1);
+               for(var i=0;i<this.deleteListItem.length;i++){
+                  if(this.deleteListItem[i].id==item.id){
+                      this.deleteListItem.splice(i,1);
                       break;
                   }
               }       
@@ -154,9 +154,9 @@ export default {
      data () {
         return {
             todoList:[],
-            deleteListItem: {
+            deleteListItem: [{
                 id: '',
-            },
+            },],
 
             updateListItem: {
                 id: '',
