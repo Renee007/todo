@@ -35,7 +35,7 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                         </span>
                                         <!-- checkbox -->
-                                        <input type="checkbox" value="" id="checkbox" @click="completeOne(item)"/>
+                                        <input type="checkbox" value="" id="item.id+a" @click="completeOne(item)"/>
                                         <!-- todo text -->
                                         <span class="text" v-text="item.task_name"></span>
                                         <!-- Emphasis label -->
@@ -126,8 +126,9 @@ export default {
                 });
         },
         completeOne:function(item){
-            if($("#checkbox").is(':checked')){
-              this.deleteListItem.push({id:'item.id'});
+          var thisFrame=(item.id+"a");
+            if($("#"+thisFrame).is(':checked')){
+              this.deleteListItem.push({id:item.id});
             }
             else{
                for(var i=0;i<this.deleteListItem.length;i++){
@@ -154,9 +155,7 @@ export default {
      data () {
         return {
             todoList:[],
-            deleteListItem: [{
-                id: '',
-            },],
+            deleteListItem: [],
 
             updateListItem: {
                 id: '',

@@ -63,7 +63,7 @@
                       <div class="box-body">
                           <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="updateListItem.task_name"></textarea><br/>
                           <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="updateListItem.time"/>
-                          <select class="form-control input-sm" style="width:88px;display:inline-block" >
+                          <select class="form-control input-sm" style="width:88px;display:inline-block" id="time">
                           <option>mins</option>
                           <option>hours</option>
                           <option>days</option>
@@ -125,7 +125,10 @@ export default {
              $("#update_block").fadeIn(200);
         },
          updateSubmit:function(){
+             
              const _self=this;
+             _self.updateListItem.time_unit=$("#time").val();
+             
              $.ajax({
                     url: api.updateTaskList,
                     type: "post",

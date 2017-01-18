@@ -19,7 +19,7 @@
                       <div class="box-body">
                           <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="addListItem.task_name"></textarea><br/>
                           <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="addListItem.time"/>
-                          <select class="form-control input-sm" style="width:88px;display:inline-block" >
+                          <select class="form-control input-sm" style="width:88px;display:inline-block" id="time">
                           <option>mins</option>
                           <option>hours</option>
                           <option>days</option>
@@ -53,6 +53,7 @@ export default {
     methods: {
         addItem:function(){
              const _self=this;
+             _self.addListItem.time_unit=$("#time").val();
              $.ajax({
                     url: api.addTaskList,
                     type: "post",
