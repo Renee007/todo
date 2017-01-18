@@ -51,10 +51,13 @@ export default {
         
     },
     methods: {
+         
         addItem:function(){
              const _self=this;
              _self.addListItem.time_unit=$("#time").val();
-             $.ajax({
+             var add=_self.addListItem;
+             if(add.task_name!=''&add.time!=''&add.time_unit!=''){
+               $.ajax({
                     url: api.addTaskList,
                     type: "post",
                     data: _self.addListItem,
@@ -62,6 +65,10 @@ export default {
                         alert("添加成功！");
                      }
                 });
+             }else{
+               alert("please complete the item!")
+             }
+            
            },
 
     },

@@ -122,14 +122,18 @@ export default {
         },
          update:function(item){
              this.updateListItem.id = item.id;
+             this.updateListItem.task_name = item.task_name;
+             this.updateListItem.time = item.time;
+             this.updateListItem.time_unit = item.time_unit;
              $("#update_block").fadeIn(200);
         },
          updateSubmit:function(){
              
              const _self=this;
              _self.updateListItem.time_unit=$("#time").val();
-             
-             $.ajax({
+             var  up=_self.updateListItem;
+            if(up.task_name!=''&up.time!=''&up.time_unit!=''){
+               $.ajax({
                     url: api.updateTaskList,
                     type: "post",
                     data: _self.updateListItem,
@@ -138,6 +142,10 @@ export default {
                     }
                 });
              $("#update_block").fadeOut(200);
+           }else{
+            alert("please complete the item!")
+           }
+            
         },
     },
      data () {
