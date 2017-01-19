@@ -25,7 +25,7 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                         </span>
                                          <!-- checkbox -->
-                                        <input type="checkbox" value="">
+                                          <input type="checkbox" value="" id="item.id+a" @click="completeOne(item)"/>
                                         <!-- todo text -->
                                         <span class="text" v-text="item.task_name"></span>
                                         <!-- Emphasis label -->
@@ -41,12 +41,15 @@
                                 </ul>
                             </div>
                         <!-- /.box-body -->
-                       <div  class="box-footer clearfix no-border">
-                         <button type="button" class="btn btn-default pull-right">submit</button>
-                       <router-link :to="{name: 'new'}">
-                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus" ></i> Add item</button>
+                        <div  class="box-footer clearfix no-border">
+                        <button type="button" class="btn btn-default pull-right" @click="complete"> 确定</button>
+                        </div>
+
+                        <router-link :to="{name: 'new'}">
+                        <div  class="box-footer clearfix no-border">
+                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus" href></i> Add item</button>
+                            </div>
                         </router-link>
-                      </div>
                     </div>
                     <!-- /.box -->
                </div>
