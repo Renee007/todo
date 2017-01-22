@@ -8303,15 +8303,15 @@
 	        }, {
 	            path: 'todo',
 	            name: 'todo',
-	            component: __webpack_require__(24) // 待完成任务列表页
+	            component: __webpack_require__(28) // 待完成任务列表页
 	        }, {
 	            path: 'done',
 	            name: 'done',
-	            component: __webpack_require__(27) // 已完成任务列表页
+	            component: __webpack_require__(33) // 已完成任务列表页
 	        }, {
 	            path: 'new',
 	            name: 'new',
-	            component: __webpack_require__(30) // 新建任务页
+	            component: __webpack_require__(36) // 新建任务页
 	        }]
 	    }, {
 	        path: '/index',
@@ -10596,7 +10596,7 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -10604,7 +10604,10 @@
 	exports.default = {
 	    data: function data() {
 	        return {
-	            infor: infor
+	            infor: { myPhoto: "http://img3.cache.hxsd.com/hxsdmy/gallery/2012/00/68/41/30/10/24/134021944/8.jpg",
+	                userName: 'Renee Sun',
+	                joinTime: ' Member since Nov. 2012'
+	            }
 	        };
 	    }
 	};
@@ -10613,7 +10616,7 @@
 /* 15 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<header class=\"main-header\">\n    <router-link :to=\"{name: 'all'}\" class=\"logo\">\n        <!-- mini logo for sidebar mini 50x50 pixels -->\n        <span class=\"logo-mini\"><small>Todo</small></span>\n        <!-- logo for regular state and mobile devices -->\n        <span class=\"logo-lg\"><b>To</b>do</span>\n    </router-link>\n   \n    <!-- Header Navbar -->\n    <nav class=\"navbar navbar-static-top\" role=\"navigation\">\n        <!-- Sidebar toggle button-->\n    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"offcanvas\" role=\"button\">\n      <span class=\"sr-only\">Toggle navigation</span>\n     </a>\n\n      <!-- Navbar Right Menu -->\n        <div class=\"navbar-custom-menu\">\n            <ul class=\"nav navbar-nav\">\n                \n\n                <!-- Messages: style can be found in dropdown.less-->\n                <li class=\"dropdown messages-menu\">\n                    <!-- Menu toggle button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-envelope-o\"></i>\n                      <span class=\"label label-success\">4</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 4 messages</li>\n                      <li>\n                        <!-- inner menu: contains the messages -->\n                        <ul class=\"menu\">\n                          <li><!-- start message -->\n                            <a href=\"#\">\n                              <div class=\"pull-left\">\n                                <!-- User Image -->\n                                <img :src=\"infor.myPhoto\" class=\"img-circle\" alt=\"User Image\">\n                              </div>\n                              <!-- Message title and timestamp -->\n                              <h4>\n                                Support Team\n                                <small><i class=\"fa fa-clock-o\"></i> 5 mins</small>\n                              </h4>\n                              <!-- The message -->\n                              <p>Why not buy a new awesome theme?</p>\n                            </a>\n                          </li>\n                          <!-- end message -->\n                        </ul>\n                        <!-- /.menu -->\n                      </li>\n                      <li class=\"footer\"><a href=\"#\">See All Messages</a></li>\n                    </ul>\n                </li>\n                <!-- /.messages-menu -->\n\n                <!-- Notifications Menu -->\n                <li class=\"dropdown notifications-menu\">\n                    <!-- Menu toggle button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-bell-o\"></i>\n                      <span class=\"label label-warning\">10</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 10 notifications</li>\n                      <li>\n                        <!-- Inner Menu: contains the notifications -->\n                        <ul class=\"menu\">\n                          <li><!-- start notification -->\n                            <a href=\"#\">\n                              <i class=\"fa fa-users text-aqua\"></i> 5 new members joined today\n                            </a>\n                          </li>\n                          <!-- end notification -->\n                        </ul>\n                      </li>\n                      <li class=\"footer\"><a href=\"#\">View all</a></li>\n                    </ul>\n                </li>\n                 \n                <!-- Tasks Menu -->\n                <li class=\"dropdown tasks-menu\">\n                    <!-- Menu Toggle Button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-flag-o\"></i>\n                      <span class=\"label label-danger\">9</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 9 tasks</li>\n                      <li>\n                        <!-- Inner menu: contains the tasks -->\n                        <ul class=\"menu\">\n                          <li><!-- Task item -->\n                            <a href=\"#\">\n                              <!-- Task title and progress text -->\n                              <h3>\n                                Design some buttons\n                                <small class=\"pull-right\">20%</small>\n                              </h3>\n                              <!-- The progress bar -->\n                              <div class=\"progress xs\">\n                                <!-- Change the css width attribute to simulate progress -->\n                                <div class=\"progress-bar progress-bar-aqua\" style=\"width: 20%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                  <span class=\"sr-only\">20% Complete</span>\n                                </div>\n                              </div>\n                            </a>\n                          </li>\n                          <!-- end task item -->\n                        </ul>\n                      </li>\n                      <li class=\"footer\">\n                        <a href=\"#\">View all tasks</a>\n                      </li>\n                    </ul>\n                </li>       \n\n                <!-- Account Menu -->\n                <li class=\"dropdown user user-menu\">\n                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                   <img src=\"http://img3.cache.hxsd.com/hxsdmy/gallery/2012/00/68/41/30/10/24/134021944/8.jpg\" class=\"user-image\" alt=\"User Image\"/>\n                  <span class=\"hidden-xs\" v-text=\"infor.userName\"></span>\n                 </a>\n                 <ul class=\"dropdown-menu\">\n                      <!-- The user image in the menu -->\n                      <li class=\"user-header\">\n                         <img src=\"http://img3.cache.hxsd.com/hxsdmy/gallery/2012/00/68/41/30/10/24/134021944/8.jpg\" class=\"img-circle\" alt=\"User Image\">\n                        <p v-text=\"infor.userName\">\n                          </p> \n                        <p><small v-text=\"infor.joinTime\"></small></p>\n                       \n                      </li>\n                      <!-- Menu Body -->\n                      <li class=\"user-body\">\n                        <div class=\"row\">\n                          <div class=\"col-xs-6 text-center\">\n                            <a href=\"#\">Followers</a>\n                          </div>\n                          \n                          <div class=\"col-xs-6 text-center\">\n                            <a href=\"#\">Followings</a>\n                          </div>\n                        </div>\n                        <!-- /.row -->\n                      </li>\n                      <!-- Menu Footer-->\n                      <li class=\"user-footer\">\n                        <!-- <div class=\"pull-left\">\n                          <a href=\"#\" class=\"btn btn-default btn-flat\">Profile</a>\n                        </div> -->\n                        <div class=\"pull-right\">\n                          <a href=\"../../login/login.html\" class=\"btn btn-default btn-flat\">Sign out</a>\n                        </div>\n                      </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </nav>\n</header>\n";
+	module.exports = "\n<header class=\"main-header\">\n    <router-link :to=\"{name: 'all'}\" class=\"logo\">\n        <!-- mini logo for sidebar mini 50x50 pixels -->\n        <span class=\"logo-mini\"><small>Todo</small></span>\n        <!-- logo for regular state and mobile devices -->\n        <span class=\"logo-lg\"><b>To</b>do</span>\n    </router-link>\n   \n    <!-- Header Navbar -->\n    <nav class=\"navbar navbar-static-top\" role=\"navigation\">\n        <!-- Sidebar toggle button-->\n    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"offcanvas\" role=\"button\">\n      <span class=\"sr-only\">Toggle navigation</span>\n     </a>\n\n      <!-- Navbar Right Menu -->\n        <div class=\"navbar-custom-menu\">\n            <ul class=\"nav navbar-nav\">\n                \n\n                <!-- Messages: style can be found in dropdown.less-->\n                <li class=\"dropdown messages-menu\">\n                    <!-- Menu toggle button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-envelope-o\"></i>\n                      <span class=\"label label-success\">4</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 4 messages</li>\n                      <li>\n                        <!-- inner menu: contains the messages -->\n                        <ul class=\"menu\">\n                          <li><!-- start message -->\n                            <a href=\"#\">\n                              <div class=\"pull-left\">\n                                <!-- User Image -->\n                                <img :src=\"infor.myPhoto\" class=\"img-circle\" alt=\"User Image\">\n                              </div>\n                              <!-- Message title and timestamp -->\n                              <h4>\n                                Support Team\n                                <small><i class=\"fa fa-clock-o\"></i> 5 mins</small>\n                              </h4>\n                              <!-- The message -->\n                              <p>Why not buy a new awesome theme?</p>\n                            </a>\n                          </li>\n                          <!-- end message -->\n                        </ul>\n                        <!-- /.menu -->\n                      </li>\n                      <li class=\"footer\"><a href=\"#\">See All Messages</a></li>\n                    </ul>\n                </li>\n                <!-- /.messages-menu -->\n\n                <!-- Notifications Menu -->\n                <li class=\"dropdown notifications-menu\">\n                    <!-- Menu toggle button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-bell-o\"></i>\n                      <span class=\"label label-warning\">10</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 10 notifications</li>\n                      <li>\n                        <!-- Inner Menu: contains the notifications -->\n                        <ul class=\"menu\">\n                          <li><!-- start notification -->\n                            <a href=\"#\">\n                              <i class=\"fa fa-users text-aqua\"></i> 5 new members joined today\n                            </a>\n                          </li>\n                          <!-- end notification -->\n                        </ul>\n                      </li>\n                      <li class=\"footer\"><a href=\"#\">View all</a></li>\n                    </ul>\n                </li>\n                 \n                <!-- Tasks Menu -->\n                <li class=\"dropdown tasks-menu\">\n                    <!-- Menu Toggle Button -->\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                      <i class=\"fa fa-flag-o\"></i>\n                      <span class=\"label label-danger\">9</span>\n                    </a>\n                    <ul class=\"dropdown-menu\">\n                      <li class=\"header\">You have 9 tasks</li>\n                      <li>\n                        <!-- Inner menu: contains the tasks -->\n                        <ul class=\"menu\">\n                          <li><!-- Task item -->\n                            <a href=\"#\">\n                              <!-- Task title and progress text -->\n                              <h3>\n                                Design some buttons\n                                <small class=\"pull-right\">20%</small>\n                              </h3>\n                              <!-- The progress bar -->\n                              <div class=\"progress xs\">\n                                <!-- Change the css width attribute to simulate progress -->\n                                <div class=\"progress-bar progress-bar-aqua\" style=\"width: 20%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                  <span class=\"sr-only\">20% Complete</span>\n                                </div>\n                              </div>\n                            </a>\n                          </li>\n                          <!-- end task item -->\n                        </ul>\n                      </li>\n                      <li class=\"footer\">\n                        <a href=\"#\">View all tasks</a>\n                      </li>\n                    </ul>\n                </li>       \n\n                <!-- Account Menu -->\n                <li class=\"dropdown user user-menu\">\n                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                   <img :src=\"infor.myPhoto\" class=\"user-image\" alt=\"User Image\"/>\n                  <span class=\"hidden-xs\" v-text=\"infor.userName\"></span>\n                 </a>\n                 <ul class=\"dropdown-menu\">\n                      <!-- The user image in the menu -->\n                      <li class=\"user-header\">\n                         <img :src=\"infor.myPhoto\" class=\"img-circle\" alt=\"User Image\">\n                        <p v-text=\"infor.userName\">\n                          </p> \n                        <p><small v-text=\"infor.joinTime\"></small></p>\n                       \n                      </li>\n                      <!-- Menu Body -->\n                      <li class=\"user-body\">\n                        <div class=\"row\">\n                          <div class=\"col-xs-6 text-center\">\n                            <a href=\"#\">Followers</a>\n                          </div>\n                          \n                          <div class=\"col-xs-6 text-center\">\n                            <a href=\"#\">Followings</a>\n                          </div>\n                        </div>\n                        <!-- /.row -->\n                      </li>\n                      <!-- Menu Footer-->\n                      <li class=\"user-footer\">\n                        <!-- <div class=\"pull-left\">\n                          <a href=\"#\" class=\"btn btn-default btn-flat\">Profile</a>\n                        </div> -->\n                        <div class=\"pull-right\">\n                          <a href=\"../../login/login.html\" class=\"btn btn-default btn-flat\">Sign out</a>\n                        </div>\n                      </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </nav>\n</header>\n";
 
 /***/ },
 /* 16 */
@@ -10694,7 +10697,11 @@
 	                "view": "new",
 	                "icon": "fa fa-calendar-plus-o"
 	            }],
-	            infor: infor
+	            infor: {
+	                myPhoto: "http://img3.cache.hxsd.com/hxsdmy/gallery/2012/00/68/41/30/10/24/134021944/8.jpg",
+	                userName: 'Renee Sun',
+	                joinTime: ' Member since Nov. 2012'
+	            }
 	        };
 	    }
 	};
@@ -10703,7 +10710,7 @@
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<aside class=\"main-sidebar\">\n    <section class=\"sidebar\">\n        <!-- Sidebar user panel (optional) -->\n        <div class=\"user-panel\">\n            <div class=\"pull-left image\">\n              <img :src=\"infor.myPhoto\" class=\"img-circle\" alt=\"User Image\">\n            </div>\n            <div class=\"pull-left info\">\n              <p>Renee Sun</p>\n              <!-- Status -->\n              <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>\n            </div>\n        </div>\n\n        <!-- search form (Optional) -->\n        <form action=\"#\" method=\"get\" class=\"sidebar-form\">\n            <div class=\"input-group\">\n              <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">\n                  <span class=\"input-group-btn\">\n                    <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\"><i class=\"fa fa-search\"></i>\n                    </button>\n                  </span>\n            </div>\n        </form>\n        <!-- /.search form -->\n\n        <ul class=\"sidebar-menu\">\n            <li class=\"header\">导航栏</li>\n\n            <li v-for=\"(item, index) in menuList\"  class=\"treeview\" :class=\"{'active': currentMenu==item.view}\">\n                <router-link :to=\"{name: item.view}\">\n                    <i v-bind:class=\"item.icon\"></i> <span v-text=\"item.name\"></span>\n                </router-link>\n            </li>\n        </ul>\n    </section>\n</aside>\n";
+	module.exports = "\n<aside class=\"main-sidebar\">\n    <section class=\"sidebar\">\n        <!-- Sidebar user panel (optional) -->\n        <div class=\"user-panel\">\n            <div class=\"pull-left image\">\n              <img :src=\"infor.myPhoto\" class=\"img-circle\" alt=\"User Image\">\n            </div>\n            <div class=\"pull-left info\">\n              <p>Renee Sun</p>\n              <!-- Status -->\n              <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>\n            </div>\n        </div>\n\n        <!-- search form (Optional) -->\n        <form action=\"#\" method=\"get\" class=\"sidebar-form\">\n            <div class=\"input-group\">\n              <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">\n                  <span class=\"input-group-btn\">\n                    <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\"><i class=\"fa fa-search\" ></i>\n                    </button>\n                  </span>\n            </div>\n        </form>\n        <!-- /.search form -->\n\n        <ul class=\"sidebar-menu\">\n            <li class=\"header\">导航栏</li>\n\n            <li v-for=\"(item, index) in menuList\"  class=\"treeview\" :class=\"{'active': currentMenu==item.view}\">\n                <router-link :to=\"{name: item.view}\">\n                    <i v-bind:class=\"item.icon\"></i> <span v-text=\"item.name\"></span>\n                </router-link>\n            </li>\n        </ul>\n    </section>\n</aside>\n";
 
 /***/ },
 /* 19 */
@@ -10717,12 +10724,13 @@
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(21)
+	__webpack_require__(21)
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\view\\all.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(23)
+	__vue_template__ = __webpack_require__(27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10750,15 +10758,59 @@
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(22);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./all.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./all.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n#update_block{\r\n    display: none;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _initStyle = __webpack_require__(22);
+	var _initStyle = __webpack_require__(24);
 
 	var _initStyle2 = _interopRequireDefault(_initStyle);
+
+	var _api = __webpack_require__(25);
+
+	var _api2 = _interopRequireDefault(_api);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10775,27 +10827,75 @@
 	        render: function render() {
 	            var _self = this;
 	            $.ajax({
-	                url: 'http://192.168.1.103:8080/task-manager-api/task/info/search',
+	                url: _api2.default.fetchTaskList,
 	                type: "post",
-
 	                data: "",
-
 	                success: function success(res) {
 	                    _self.allList = res.data;
 	                }
 	            });
+	        },
+	        del: function del(item) {
+	            var _self = this;
+	            _self.deleteListItem.id = item.id;
+	            $.ajax({
+	                url: _api2.default.deleteTaskList,
+	                type: "post",
+	                data: _self.deleteListItem,
+	                success: function success() {
+	                    _self.render();
+	                }
+	            });
+	        },
+	        update: function update(item) {
+	            this.updateListItem.id = item.id;
+	            this.updateListItem.task_name = item.task_name;
+	            this.updateListItem.time = item.time;
+	            this.updateListItem.time_unit = item.time_unit;
+	            $("#update_block").fadeIn(200);
+	        },
+	        updateSubmit: function updateSubmit() {
+
+	            var _self = this;
+	            _self.updateListItem.time_unit = $("#time").val();
+	            var up = _self.updateListItem;
+	            if (up.task_name != '' & up.time != '' & up.time_unit != '') {
+	                $.ajax({
+	                    url: _api2.default.updateTaskList,
+	                    type: "post",
+	                    data: _self.updateListItem,
+	                    success: function success() {
+	                        _self.render();
+	                    }
+	                });
+	                $("#update_block").fadeOut(200);
+	            } else {
+	                alert("please complete the item!");
+	            }
+	        },
+	        cancelSubmit: function cancelSubmit() {
+	            $("#update_block").fadeOut(200);
 	        }
 	    },
 	    data: function data() {
-	        this.render();
 	        return {
-	            allList: allList
+	            allList: [],
+	            deleteListItem: {
+	                id: ''
+	            },
+
+	            updateListItem: {
+	                id: '',
+	                task_name: '',
+	                time: '',
+	                time_unit: ''
+	            }
 	        };
 	    }
 	};
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10826,23 +10926,57 @@
 	};
 
 /***/ },
-/* 23 */
-/***/ function(module, exports) {
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>所有任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n                <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        <div class=\"box-tools pull-right\">\n                                <ul class=\"pagination pagination-sm inline\">\n                                    <li><a href=\"#\">&laquo;</a></li>\n                                    <li><a href=\"#\">1</a></li>\n                                    <li><a href=\"#\">2</a></li>\n                                    <li><a href=\"#\">3</a></li>\n                                    <li><a href=\"#\">&raquo;</a></li>\n                                </ul>\n                        </div>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in allList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\"></i>\n                                        <i class=\"fa fa-trash-o\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                   <router-link :to=\"{name: 'new'}\">\n                   <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n</div>\n";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _host = __webpack_require__(26);
+
+	exports.default = {
+		host: _host.host,
+		fetchTaskList: _host.host + 'task/info/search',
+		deleteTaskList: _host.host + 'task/info/delete',
+		addTaskList: _host.host + 'task/info/add',
+		updateTaskList: _host.host + 'task/info/update'
+	};
 
 /***/ },
-/* 24 */
+/* 26 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//const host = 'http://todowebapi.local.com:3002/server/';
+	var host = "http://192.168.1.103:8080/task-manager-api/";
+	exports.host = host;
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>所有任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n                <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in allList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\" @click=\"update(item)\"></i>\n                                        <i class=\"fa fa-trash-o\" @click=\"del(item)\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                   <router-link :to=\"{name: 'new'}\">\n                   <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n     <!-- update -->\n     <section class=\"content\" id=\"update_block\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n             <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">update</h3>\n                  </div>\n                        <!-- /.box-header -->\n                  <div class=\"box-body\">\n                      <textarea type=\"text\" style=\"width:360px;\" placeholder=\"请输入你要做的事\" v-model=\"updateListItem.task_name\"></textarea><br/>\n                      <input type=\"text\" style=\"width:270px;\" placeholder=\"请输入计划完成的时间\" v-model=\"updateListItem.time\"/>\n                      <select class=\"form-control input-sm\" style=\"width:88px;display:inline-block\" id=\"time\">\n                      <option>mins</option>\n                      <option>hours</option>\n                      <option>days</option>\n                      <option>weeks</option>\n                      </select>\n                      <br/><br/>\n                      <button class=\"btn btn-primary btn-sm\" @click=\"updateSubmit\">确定</button>\n                      <button class=\"btn  btn-sm\" @click=\"cancelSubmit\">取消</button>\n                  </div>\n              </div>\n                <!-- /.box -->\n                \n           </div>\n       </div>\n    </section>\n</div>\n";
+
+/***/ },
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(25)
+	__webpack_require__(29)
+	__vue_script__ = __webpack_require__(31)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\view\\todo.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(32)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10867,7 +11001,47 @@
 	})()}
 
 /***/ },
-/* 25 */
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(30);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./todo.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./todo.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n#update_block{\r\n    display: none;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10876,15 +11050,20 @@
 	    value: true
 	});
 
-	var _initStyle = __webpack_require__(22);
+	var _initStyle = __webpack_require__(24);
 
 	var _initStyle2 = _interopRequireDefault(_initStyle);
+
+	var _api = __webpack_require__(25);
+
+	var _api2 = _interopRequireDefault(_api);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 	    mounted: function mounted() {
-	        this.render();
+
+	        this.render();this.initData();
 	        this.$nextTick(function () {
 	            (0, _initStyle2.default)();
 	        });
@@ -10893,43 +11072,126 @@
 	    computed: {},
 	    methods: {
 	        render: function render() {
+	            var _self = this;
 	            $.ajax({
-	                url: 'http://192.168.1.103:8080/task-manager-api/task/info/search',
+	                url: _api2.default.fetchTaskList,
 	                type: "post",
-
 	                data: "status=todo",
-
 	                success: function success(res) {
-	                    todoList = res.data;
+	                    _self.todoList = res.data;
+	                }
+	            });
+	        },
+	        del: function del(item) {
+	            var _self = this;
+	            _self.deleteListItem.id = item.id;
+	            $.ajax({
+	                url: _api2.default.deleteTaskList,
+	                type: "post",
+	                data: _self.deleteListItem,
+	                success: function success() {
+	                    _self.render();
+	                }
+	            });
+	        },
+	        update: function update(item) {
+	            this.updateListItem.id = item.id;
+	            this.updateListItem.task_name = item.task_name;
+	            this.updateListItem.time = item.time;
+	            this.updateListItem.time_unit = item.time_unit;
+	            $("#update_block").fadeIn(200);
+	        },
+	        updateSubmit: function updateSubmit() {
+
+	            var _self = this;
+	            _self.updateListItem.time_unit = $("#time").val();
+	            var up = _self.updateListItem;
+	            if (up.task_name != '' & up.time != '' & up.time_unit != '') {
+	                $.ajax({
+	                    url: _api2.default.updateTaskList,
+	                    type: "post",
+	                    data: _self.updateListItem,
+	                    success: function success() {
+	                        _self.render();
+	                    }
+	                });
+	                $("#update_block").fadeOut(200);
+	            } else {
+	                alert("please complete the item!");
+	            }
+	        },
+	        cancelSubmit: function cancelSubmit() {
+	            $("#update_block").fadeOut(200);
+	        },
+	        initData: function initData() {
+	            for (var i = 0; i < todoList.length; i++) {
+	                todoList[i].selected = false;
+	            }
+	        },
+	        completeOne: function completeOne(item) {
+	            item.selected = !item.selected;
+	            if (item.selected) {
+	                this.completeListItem.push({ id: item.id });
+	            } else {
+	                for (var i = 0; i < this.completeListItem.length; i++) {
+	                    if (this.completeListItem[i].id == item.id) {
+	                        this.completeListItem.splice(i, 1);
+	                        break;
+	                    }
+	                }
+	            }
+	        },
+	        completeSubmit: function completeSubmit() {
+	            var _self = this;
+	            $.ajax({
+	                url: _api2.default.completeTaskList,
+	                type: "post",
+	                data: _self.completeListItem,
+	                success: function success() {
+	                    _self.render();
 	                }
 	            });
 	        }
 	    },
 	    data: function data() {
 	        return {
-	            todoList: todoList
+	            todoList: [],
+	            deleteListItem: {
+	                id: ''
+	            },
+
+	            updateListItem: {
+	                id: '',
+	                task_name: '',
+	                time: '',
+	                time_unit: ''
+	            },
+	            completeListItem: {
+	                id: ''
+	            },
+	            value: false
 	        };
 	    }
 	};
 
 /***/ },
-/* 26 */
+/* 32 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>待完成任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n\n             <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        <div class=\"box-tools pull-right\">\n                                <ul class=\"pagination pagination-sm inline\">\n                                    <li><a href=\"#\">&laquo;</a></li>\n                                    <li><a href=\"#\">1</a></li>\n                                    <li><a href=\"#\">2</a></li>\n                                    <li><a href=\"#\">3</a></li>\n                                    <li><a href=\"#\">&raquo;</a></li>\n                                </ul>\n                        </div>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in todoList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                    <!-- checkbox -->\n                                    <input type=\"checkbox\" value=\"\">\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\"></i>\n                                        <i class=\"fa fa-trash-o\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                     <div  class=\"box-footer clearfix no-border\">\n                    <button type=\"button\" class=\"btn btn-default pull-right\"> 确定</button>\n                    </div>\n\n                    <router-link :to=\"{name: 'new'}\">\n                    <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n</div>\n";
+	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>待完成任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n                <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in todoList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                     <!-- checkbox -->\n                                      <input type=\"checkbox\" value=\"\"  @click=\"completeOne(item)\"/>\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\" @click=\"update(item)\"></i>\n                                        <i class=\"fa fa-trash-o\" @click=\"del(item)\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                    <div  class=\"box-footer clearfix no-border\">\n                    <button type=\"button\" class=\"btn btn-default pull-right\" @click=\"completeSubmit\"> 确定</button>\n                    </div>\n\n                    <router-link :to=\"{name: 'new'}\">\n                    <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n     <!-- update -->\n     <section class=\"content\" id=\"update_block\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n             <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">update</h3>\n                  </div>\n                        <!-- /.box-header -->\n                  <div class=\"box-body\">\n                      <textarea type=\"text\" style=\"width:360px;\" placeholder=\"请输入你要做的事\" v-model=\"updateListItem.task_name\"></textarea><br/>\n                      <input type=\"text\" style=\"width:270px;\" placeholder=\"请输入计划完成的时间\" v-model=\"updateListItem.time\"/>\n                      <select class=\"form-control input-sm\" style=\"width:88px;display:inline-block\" id=\"time\">\n                      <option>mins</option>\n                      <option>hours</option>\n                      <option>days</option>\n                      <option>weeks</option>\n                      </select>\n                      <br/><br/>\n                      <button class=\"btn btn-primary btn-sm\" @click=\"updateSubmit\">确定</button>\n                      <button class=\"btn  btn-sm\" @click=\"cancelSubmit\">取消</button>\n                  </div>\n              </div>\n                <!-- /.box -->\n                \n           </div>\n       </div>\n    </section>\n</div>\n";
 
 /***/ },
-/* 27 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(28)
+	__vue_script__ = __webpack_require__(34)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\view\\done.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(29)
+	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10954,7 +11216,7 @@
 	})()}
 
 /***/ },
-/* 28 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10963,9 +11225,13 @@
 	    value: true
 	});
 
-	var _initStyle = __webpack_require__(22);
+	var _initStyle = __webpack_require__(24);
 
 	var _initStyle2 = _interopRequireDefault(_initStyle);
+
+	var _api = __webpack_require__(25);
+
+	var _api2 = _interopRequireDefault(_api);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10982,42 +11248,78 @@
 	        render: function render() {
 	            var _self = this;
 	            $.ajax({
-	                url: 'http://192.168.1.103:8080/task-manager-api/task/info/search',
+	                url: _api2.default.fetchTaskList,
 	                type: "post",
-
 	                data: "status=done",
-
 	                success: function success(res) {
 	                    _self.doneList = res.data;
+	                }
+	            });
+	        },
+	        del: function del(item) {
+	            var _self = this;
+	            _self.deleteListItem.id = item.id;
+	            $.ajax({
+	                url: _api2.default.deleteTaskList,
+	                type: "post",
+	                data: deleteListItem,
+	                success: function success() {
+	                    _self.render();
+	                }
+	            });
+	        },
+	        update: function update(item) {
+	            var _self = this;
+	            _self.updateListItem.id = item.id;
+	            _self.updateListItem.task_name = item.task_name;
+	            _self.updateListItem.time = item.time;
+	            _self.updateListItem.time_unit = item.time_unit;
+
+	            $.ajax({
+	                url: _api2.default.updateTaskList,
+	                type: "post",
+	                data: updateListItem,
+	                success: function success() {
+	                    _self.render();
 	                }
 	            });
 	        }
 	    },
 	    data: function data() {
 	        return {
-	            doneList: doneList
+	            doneList: [],
+	            deleteListItem: {
+	                id: ''
+	            },
+
+	            updateListItem: {
+	                id: '',
+	                task_name: '',
+	                time: '',
+	                time_unit: ''
+	            }
 	        };
 	    }
 	};
 
 /***/ },
-/* 29 */
+/* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>已完成任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n              <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        <div class=\"box-tools pull-right\">\n                                <ul class=\"pagination pagination-sm inline\">\n                                    <li><a href=\"#\">&laquo;</a></li>\n                                    <li><a href=\"#\">1</a></li>\n                                    <li><a href=\"#\">2</a></li>\n                                    <li><a href=\"#\">3</a></li>\n                                    <li><a href=\"#\">&raquo;</a></li>\n                                </ul>\n                        </div>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in doneList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\"></i>\n                                        <i class=\"fa fa-trash-o\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                     <router-link :to=\"{name: 'new'}\">\n                   <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n</div>\n";
+	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>已完成任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n              <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                        <div class=\"box-tools pull-right\">\n                                <ul class=\"pagination pagination-sm inline\">\n                                    <li><a href=\"#\">&laquo;</a></li>\n                                    <li><a href=\"#\">1</a></li>\n                                    <li><a href=\"#\">2</a></li>\n                                    <li><a href=\"#\">3</a></li>\n                                    <li><a href=\"#\">&raquo;</a></li>\n                                </ul>\n                        </div>\n                        </div>\n                        <!-- /.box-header -->\n                        <div class=\"box-body\">\n                            <ul class=\"todo-list\">\n                                <li v-for=\"item in doneList\">\n                                    <!-- drag handle -->\n                                    <span class=\"handle\">\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                      <i class=\"fa fa-ellipsis-v\"></i>\n                                    </span>\n                                    <!-- todo text -->\n                                    <span class=\"text\" v-text=\"item.task_name\"></span>\n                                    <!-- Emphasis label -->\n                                    <small class=\"label label-danger\"><i class=\"fa fa-clock-o\" v-text=\"item.time+item.time_unit\"></i></small>\n                                    <!-- General tools such as edit or delete-->\n                                    <div class=\"tools\">\n                                        <i class=\"fa fa-edit\" @click=\"update(item)\"></i>\n                                        <i class=\"fa fa-trash-o\" @click=\"del(item)\"></i>\n                                    </div>\n                                 </li>\n\n                                \n                            </ul>\n                        </div>\n                    <!-- /.box-body -->\n                     <router-link :to=\"{name: 'new'}\">\n                   <div  class=\"box-footer clearfix no-border\">\n                        <button type=\"button\" class=\"btn btn-default pull-right\"><i class=\"fa fa-plus\" href></i> Add item</button>\n                        </div>\n                    </router-link>\n                </div>\n                <!-- /.box -->\n           </div>\n       </div>\n    </section>\n</div>\n";
 
 /***/ },
-/* 30 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(31)
+	__vue_script__ = __webpack_require__(37)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\view\\new.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(32)
+	__vue_template__ = __webpack_require__(38)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -11042,7 +11344,7 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11051,9 +11353,13 @@
 	    value: true
 	});
 
-	var _initStyle = __webpack_require__(22);
+	var _initStyle = __webpack_require__(24);
 
 	var _initStyle2 = _interopRequireDefault(_initStyle);
+
+	var _api = __webpack_require__(25);
+
+	var _api2 = _interopRequireDefault(_api);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11065,14 +11371,43 @@
 	    },
 
 	    computed: {},
-	    methods: {}
+	    methods: {
+
+	        addItem: function addItem() {
+	            var _self = this;
+	            _self.addListItem.time_unit = $("#time").val();
+	            var add = _self.addListItem;
+	            if (add.task_name != '' & add.time != '' & add.time_unit != '') {
+	                $.ajax({
+	                    url: _api2.default.addTaskList,
+	                    type: "post",
+	                    data: _self.addListItem,
+	                    success: function success() {
+	                        alert("添加成功！");
+	                    }
+	                });
+	            } else {
+	                alert("please complete the item!");
+	            }
+	        }
+
+	    },
+	    data: function data() {
+	        return {
+	            addListItem: {
+	                task_name: '',
+	                time: '',
+	                time_unit: ''
+	            }
+	        };
+	    }
 	};
 
 /***/ },
-/* 32 */
+/* 38 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>新建任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n             <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                  </div>\n                        <!-- /.box-header -->\n                  <div class=\"box-body\">\n                      <textarea type=\"text\" style=\"width:360px;\" placeholder=\"请输入你要做的事\" ></textarea>\n                      <textarea type=\"text\" style=\"width:360px;\" placeholder=\"请输入计划完成的时间\" ></textarea>\n                      <br/>\n                      <button class=\"btn btn-primary btn-sm\" @click=\"newList\">确定</button>\n                  </div>\n              </div>\n                <!-- /.box -->\n                \n           </div>\n       </div>\n    </section>\n</div>\n";
+	module.exports = "\n<div class=\"content-wrapper\">\n    <!-- Content Header -->\n    <section class=\"content-header\">\n        <h1>新建任务</h1>\n    </section>\n\n    <!-- Main content -->\n    <section class=\"content\">\n       <div class=\"row\">\n           <div class=\"col-md-12\">\n             <!-- TO DO List -->\n              <div class=\"box box-primary\">\n                  <div class=\"box-header\">\n                    <i class=\"ion ion-clipboard\"></i>\n                       <h3 class=\"box-title\">To Do List</h3>\n                  </div>\n                        <!-- /.box-header -->\n                  <div class=\"box-body\">\n                      <textarea type=\"text\" style=\"width:360px;\" placeholder=\"请输入你要做的事\" v-model=\"addListItem.task_name\"></textarea><br/>\n                      <input type=\"text\" style=\"width:270px;\" placeholder=\"请输入计划完成的时间\" v-model=\"addListItem.time\"/>\n                      <select class=\"form-control input-sm\" style=\"width:88px;display:inline-block\" id=\"time\">\n                      <option>mins</option>\n                      <option>hours</option>\n                      <option>days</option>\n                      <option>weeks</option>\n                      </select>\n                      <br/><br/>\n                      <button class=\"btn btn-primary btn-sm\" @click=\"addItem\">确定</button>\n                  </div>\n              </div>\n                <!-- /.box -->\n                \n           </div>\n       </div>\n    </section>\n</div>\n";
 
 /***/ }
 /******/ ]);

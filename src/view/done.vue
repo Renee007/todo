@@ -9,20 +9,11 @@
         <section class="content">
            <div class="row">
                <div class="col-md-12">
-                  <!-- TO DO List -->
+                    <!-- TO DO List -->
                   <div class="box box-primary">
                       <div class="box-header">
                         <i class="ion ion-clipboard"></i>
                            <h3 class="box-title">To Do List</h3>
-                            <div class="box-tools pull-right">
-                                    <ul class="pagination pagination-sm inline">
-                                        <li><a href="#">&laquo;</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">&raquo;</a></li>
-                                    </ul>
-                            </div>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -48,7 +39,7 @@
                                 </ul>
                             </div>
                         <!-- /.box-body -->
-                         <router-link :to="{name: 'new'}">
+                       <router-link :to="{name: 'new'}">
                        <div  class="box-footer clearfix no-border">
                             <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus" href></i> Add item</button>
                             </div>
@@ -58,12 +49,43 @@
                </div>
            </div>
         </section>
+         <!-- update -->
+         <section class="content" id="update_block">
+           <div class="row">
+               <div class="col-md-12">
+                 <!-- TO DO List -->
+                  <div class="box box-primary">
+                      <div class="box-header">
+                        <i class="ion ion-clipboard"></i>
+                           <h3 class="box-title">update</h3>
+                      </div>
+                            <!-- /.box-header -->
+                      <div class="box-body">
+                          <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="updateListItem.task_name"></textarea><br/>
+                          <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="updateListItem.time"/>
+                          <select class="form-control input-sm" style="width:88px;display:inline-block" id="time">
+                          <option>mins</option>
+                          <option>hours</option>
+                          <option>days</option>
+                          <option>weeks</option>
+                          </select>
+                          <br/><br/>
+                          <button class="btn btn-primary btn-sm" @click="updateSubmit">确定</button>
+                          <button class="btn  btn-sm" @click="cancelSubmit">取消</button>
+                      </div>
+                  </div>
+                    <!-- /.box -->
+                    
+               </div>
+           </div>
+        </section>
     </div>
 </template>
 
-<script>
+<script> 
 import initStyle from '../common/initStyle'
 import api from '../common/api'
+
 export default {
     mounted () {
         this.render();
@@ -81,7 +103,7 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    data: "status=done",
+                    data: JSON.stringify({"status":"done"}),
                     success: function (res) {
                         _self.doneList = res.data;
                     }
@@ -93,30 +115,41 @@ export default {
              $.ajax({
                     url: api.deleteTaskList,
                     type: "post",
-                    data: deleteListItem,
+                    data: JSON.stringify(_self.deleteListItem),
                     success: function () {
                          _self.render();
-                      
                     }
                 });
         },
          update:function(item){
+             this.updateListItem.id = item.id;
+             this.updateListItem.task_name = item.task_name;
+             this.updateListItem.time = item.time;
+             this.updateListItem.time_unit = item.time_unit;
+             $("#update_block").fadeIn(200);
+        },
+         updateSubmit:function(){
+             
              const _self=this;
-             _self.updateListItem.id = item.id;
-             _self.updateListItem.task_name = item.task_name;
-             _self.updateListItem.time = item.time;
-             _self.updateListItem.time_unit = item.time_unit;
-
-
-             $.ajax({
+             _self.updateListItem.time_unit=$("#time").val();
+             var  up=_self.updateListItem;
+            if(up.task_name!=''&up.time!=''&up.time_unit!=''){
+               $.ajax({
                     url: api.updateTaskList,
                     type: "post",
-                    data: updateListItem,
+                    data: JSON.stringify(_self.updateListItem),
                     success: function () {
-                         _self.render();
-                      
+                          _self.render();
                     }
                 });
+             $("#update_block").fadeOut(200);
+           }else{
+            alert("please complete the item!")
+           }
+            
+        },
+        cancelSubmit:function(){
+          $("#update_block").fadeOut(200);
         },
     },
      data () {
@@ -136,3 +169,8 @@ export default {
     }
 }
 </script>
+<style>
+#update_block{
+    display: none;
+}
+</style>

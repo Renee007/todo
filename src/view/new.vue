@@ -60,7 +60,7 @@ export default {
                $.ajax({
                     url: api.addTaskList,
                     type: "post",
-                    data: _self.addListItem,
+                    data: JSON.stringify(_self.addListItem),
                     success: function () {
                         alert("添加成功！");
                      }

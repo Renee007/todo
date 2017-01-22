@@ -71,6 +71,7 @@
                           </select>
                           <br/><br/>
                           <button class="btn btn-primary btn-sm" @click="updateSubmit">确定</button>
+                          <button class="btn  btn-sm" @click="cancelSubmit">取消</button>
                       </div>
                   </div>
                     <!-- /.box -->
@@ -102,7 +103,7 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    data: "",
+                    data: {},
                     success: function (res) {
                         _self.allList = res.data;
                     }
@@ -114,7 +115,7 @@ export default {
              $.ajax({
                     url: api.deleteTaskList,
                     type: "post",
-                    data: _self.deleteListItem,
+                    data: JSON.stringify(_self.deleteListItem),
                     success: function () {
                          _self.render();
                     }
@@ -136,7 +137,7 @@ export default {
                $.ajax({
                     url: api.updateTaskList,
                     type: "post",
-                    data: _self.updateListItem,
+                    data: JSON.stringify(_self.updateListItem),
                     success: function () {
                           _self.render();
                     }
@@ -146,6 +147,9 @@ export default {
             alert("please complete the item!")
            }
             
+        },
+        cancelSubmit:function(){
+          $("#update_block").fadeOut(200);
         },
     },
      data () {

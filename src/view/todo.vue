@@ -25,7 +25,7 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                         </span>
                                          <!-- checkbox -->
-                                          <input type="checkbox" value="" id="item.id+a" @click="completeOne(item)"/>
+                                          <input type="checkbox" value=""  @click="completeOne(item)"/>
                                         <!-- todo text -->
                                         <span class="text" v-text="item.task_name"></span>
                                         <!-- Emphasis label -->
@@ -42,7 +42,7 @@
                             </div>
                         <!-- /.box-body -->
                         <div  class="box-footer clearfix no-border">
-                        <button type="button" class="btn btn-default pull-right" @click="complete"> 确定</button>
+                        <button type="button" class="btn btn-default pull-right" @click="completeSubmit"> 确定</button>
                         </div>
 
                         <router-link :to="{name: 'new'}">
@@ -77,6 +77,7 @@
                           </select>
                           <br/><br/>
                           <button class="btn btn-primary btn-sm" @click="updateSubmit">确定</button>
+                          <button class="btn  btn-sm" @click="cancelSubmit">取消</button>
                       </div>
                   </div>
                     <!-- /.box -->
@@ -93,7 +94,9 @@ import api from '../common/api'
 
 export default {
     mounted () {
+        
         this.render();
+        //this.initData();
         this.$nextTick(() => {
             initStyle(); 
            
@@ -108,11 +111,13 @@ export default {
              $.ajax({
                     url: api.fetchTaskList,
                     type: "post",
-                    data: "status=todo",
+                    contentType:"application/json;charset=utf-8",
+                    data: JSON.stringify({"status":"todo"}),
                     success: function (res) {
                         _self.todoList = res.data;
                     }
                 });
+             //this.initData();
         },
         del:function(item){
              const _self=this;
@@ -120,7 +125,7 @@ export default {
              $.ajax({
                     url: api.deleteTaskList,
                     type: "post",
-                    data: _self.deleteListItem,
+                    data: JSON.stringify(_self.deleteListItem),
                     success: function () {
                          _self.render();
                     }
@@ -142,7 +147,7 @@ export default {
                $.ajax({
                     url: api.updateTaskList,
                     type: "post",
-                    data: _self.updateListItem,
+                    data: JSON.stringify(_self.updateListItem),
                     success: function () {
                           _self.render();
                     }
@@ -153,26 +158,35 @@ export default {
            }
             
         },
+        cancelSubmit:function(){
+          $("#update_block").fadeOut(200);
+        },
+        initData:function(){
+          for(var i=0;i<this.todoList.length;i++){
+            this.todoList[i].selected=false;
+          }
+
+        },
         completeOne:function(item){
-          var thisFrame=(item.id+"a");
-            if($("#"+thisFrame).is(':checked')){
-              this.deleteListItem.push({id:item.id});
+          item.selected=!item.selected;
+            if(item.selected){
+              this.completeListItem.push({id:item.id});
             }
             else{
-               for(var i=0;i<this.deleteListItem.length;i++){
-                  if(this.deleteListItem[i].id==item.id){
-                      this.deleteListItem.splice(i,1);
+               for(var i=0;i<this.completeListItem.length;i++){
+                  if(this.completeListItem[i].id==item.id){
+                      this.completeListItem.splice(i,1);
                       break;
                   }
               }       
            }
         },
-        complete:function(){
+        completeSubmit:function(){
              const _self=this;
              $.ajax({
                     url: api.completeTaskList,
                     type: "post",
-                    data: _self.completeListItem,
+                    data: JSON.stringify(_self.completeListItem),
                     success: function () {
                         _self.render();
                       
@@ -193,9 +207,8 @@ export default {
                 time: '',
                 time_unit: '',
             },
-             completeListItem: {
-                id: '',
-            },
+             completeListItem: [],
+            value:false,
         }
     }
 }
