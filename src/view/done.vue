@@ -159,12 +159,12 @@ export default {
                 id: '',
             },
 
-            updateListItem: {
+            updateListItem: [{
                 id: '',
                 task_name: '',
                 time: '',
                 time_unit: '',
-            }
+            }]
         }
     }
 }
