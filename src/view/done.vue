@@ -61,8 +61,8 @@
                       </div>
                             <!-- /.box-header -->
                       <div class="box-body">
-                          <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="updateListItem.task_name"></textarea><br/>
-                          <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="updateListItem.time"/>
+                          <textarea type="text" style="width:360px;" placeholder="请输入你要做的事" v-model="updateListItem[0].task_name"></textarea><br/>
+                          <input type="text" style="width:270px;" placeholder="请输入计划完成的时间" v-model="updateListItem[0].time"/>
                           <select class="form-control input-sm" style="width:88px;display:inline-block" id="time">
                           <option>mins</option>
                           <option>hours</option>
@@ -122,17 +122,17 @@ export default {
                 });
         },
          update:function(item){
-             this.updateListItem.id = item.id;
-             this.updateListItem.task_name = item.task_name;
-             this.updateListItem.time = item.time;
-             this.updateListItem.time_unit = item.time_unit;
+             this.updateListItem[0].id = item.id;
+             this.updateListItem[0].task_name = item.task_name;
+             this.updateListItem[0].time = item.time;
+             this.updateListItem[0].time_unit = item.time_unit;
              $("#update_block").fadeIn(200);
         },
          updateSubmit:function(){
              
              const _self=this;
-             _self.updateListItem.time_unit=$("#time").val();
-             var  up=_self.updateListItem;
+             _self.updateListItem[0].time_unit=$("#time").val();
+             var  up=_self.updateListItem[0];
             if(up.task_name!=''&up.time!=''&up.time_unit!=''){
                $.ajax({
                     url: api.updateTaskList,
